@@ -55,11 +55,11 @@ const videoSchema =new Schema({
         type:[],
         required:true
     },
-    priceBuy{
+    priceBuy:{
         type:number,
         required:true
-    }
-    priceRent{
+    },
+    priceRent:{
         type:number,
         required:true
     }
