@@ -4,25 +4,24 @@ const videoSchema =new Schema({
     videoFile:{
         type:String,//cloudinary video url
         required:[true,'Video file is required']
-    },thumbnail:{
+    },
+    MoviePoster:{
         type:String,//cloudinary image url
         required:true
     },
-    title:{
+    MovieTitle:{
         type:String,
         required:true
     },
-    description:{
+    MovieDescription:{
         type:String,
         required:true
-    },duration:{
+    },
+    duration:{
         type:Number,//cloudinary video duration
         required:true
     },
-    views:{
-        type:Number,
-        default:0
-    },
+    
     isPublished:{
         type:Boolean,
         default:true
@@ -30,6 +29,39 @@ const videoSchema =new Schema({
     owner:{
         type:Schema.Types.ObjectId,
         ref:'User'
+    },
+    category:{
+        type:string,
+        required:true
+    },
+    releasedYear:{
+        type:number,
+        required:true
+
+    },
+    ratingIMDB:{
+        type:number,
+        required:true
+    },
+    ratingRottenTomatoes:{
+        type:number,
+        required:true
+    },
+    ratingLetterboxd:{
+        type:number,
+        required:true
+    },
+    genre:{
+        type:[],
+        required:true
+    },
+    priceBuy{
+        type:number,
+        required:true
+    }
+    priceRent{
+        type:number,
+        required:true
     }
 }, {timestamps: true});
 videoSchema.plugin(mongooseAggregatePaginate);
